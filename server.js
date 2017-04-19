@@ -17,14 +17,20 @@ const http = require("http"),
 		// res.end(res.statusCode.toString());
 
 		if (req.url === "/"){
-			fs.readFile("client/views/index.html", "utf8", (err, data)=>{
+			fs.stat("client/views/index.html", (err, stats) =>{
 				// console.log(err);
 				if (err) throw err;
-				// console.log(data);
-				res.writeHeader(200, {'Content-Type': 'text/html'});
-				res.write(data);
-				res.end();
+				// console.log(stats);
+				fs.readFile("client/views/index.html", "utf8", (err, data)=>{
+					// console.log(err);
+					if (err) throw err;
+					// console.log(data);
+					res.writeHeader(200, {'Content-Type': 'text/html'});
+					res.write(data);
+					res.end();
+				});
 			});
+			
 		} else if (req.url === "/assets/css/style.css") {
         fs.readFile('assets/css/style.css', 'utf8', (err, data) => {
             if (err) throw err;
