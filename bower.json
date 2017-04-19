@@ -1,0 +1,26 @@
+{
+  "name": "venmo_api_test",
+  "description": "Venmo API test with Node.js, Express.js and MongoDB",
+  "main": "server.js",
+  "authors": [
+    "Valentyna Gorbachenko"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "venmo",
+    "api",
+    "node",
+    "mongodb"
+  ],
+  "homepage": "https://github.com/ValentynaGorbachenko/venmo_api_test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  }
+}
