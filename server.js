@@ -17,12 +17,14 @@ app.use(express.static(path.join(__dirname, './bower_components')));
 app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'ejs');
 // routes
-app.get('/', (req, res) => {
-	console.log(req);
-	console.log('*'.repeat(10));
-	console.log(res);
-	res.render('index', {title: 'Simple examlpe of Venmo API'});
-});
+require('./server/config/routes.js')(app);
+
+// app.get('/', (req, res) => {
+// 	console.log(req);
+// 	console.log('*'.repeat(10));
+// 	console.log(res);
+// 	res.render('index', {title: 'Simple examlpe of Venmo API'});
+// });
 
 app.listen(port, () => {
 	console.log(`Server is running on ${port}`);
